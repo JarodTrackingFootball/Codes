@@ -20,7 +20,7 @@ import math
 from datetime import date
 from selenium.webdriver.chrome.options import Options
 
-df = pd.read_excel(r"C:\Users\jtsve\OneDrive\Documents\NewPlayersToCheck(11-5).xlsx")
+df = pd.read_excel(r"C:\Users\jtsve\Downloads\HMPTrackGuys(2-2).xlsx")
 
 
 options = Options()
@@ -223,4 +223,4 @@ for i in range(0,len(df)):
     #df.at[i, 'GPA'] = last_highlight
     
 driver.quit()
-df.to_csv(r"C:\Users\jtsve\OneDrive\Desktop\Excel Exports\NewGuystoScrape-H(11-5).csv", index=False)
+df.to_csv(r"C:\Users\jtsve\OneDrive\Desktop\Excel Exports\NewGuysTrack(2-2).csv", index=False)

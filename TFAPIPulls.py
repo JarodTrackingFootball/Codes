@@ -24,7 +24,7 @@ today = datetime.date.today()
 date_string = today.strftime("%m-%d-%Y")
 folder_path = r"C:\Users\jtsve\OneDrive\Desktop\TFAPIJsons"
 
-player_data = pd.read_excel(r"C:\Users\jtsve\Downloads\First college.xlsx")
+player_data = pd.read_excel(r"C:\Users\jtsve\OneDrive\Documents\TORUN.xlsx")
 df = pd.DataFrame({'Slug':[''],'Hand':[''],'3Cone':[''],'Height':[''],'Weight':[''],'40mDash':[''],
               'Shuttle':[''],'Wing':[''],'Arm':[''],'Broad':[''],'Power Toss':[''],'Vertical':[''],'Date':[''],
               'City':[''],'Type':[''],'Rating':[''], 'First College':['']})
@@ -87,7 +87,9 @@ df1 = pd.read_csv(r"C:\Users\jtsve\OneDrive\Desktop\Excel Exports\CombineAPIResu
 for i in range(0,len(player_data)):
     college_list = []
     college_list_str = None
-    slug = player_data.at[i, 'Slug']
+    if player_data.at[i, 'First College'] == player_data.at[i, 'First College']:
+        continue
+    slug = player_data.at[i, 'slug']
     url_request = 'https://tfb2-api.trackingfootball.com/api/v1/api/player-details?type=slug&value='+slug
     try:
         response = requests.get(url_request, headers={'api-key':'6e0520d5-f63f-47aa-b89e-46c356f48e0a'})
@@ -109,8 +111,8 @@ for i in range(0,len(player_data)):
         player_data.at[i, 'First College'] = college_list_str
     except:
         pass
-    8
-player_data.to_csv(r"C:\Users\jtsve\OneDrive\Desktop\Excel Exports\CombineAPIResults(12-2)-2.csv",index=False)
+
+player_data.to_csv(r"C:\Users\jtsve\OneDrive\Desktop\Excel Exports\TFAPIResults(2-2)-2.csv",index=False)
 
 
 player_data = pd.read_excel(r"C:\Users\jtsve\Downloads\Players_TrackingFootball_081825-100225am.xlsx")

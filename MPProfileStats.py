@@ -22,7 +22,7 @@ import random
 import numpy as np
 from datetime import datetime
 
-daily = '1764019328'
+daily = '1767997238'
 df = pd.read_excel(r"C:\Users\jtsve\Downloads\tf hs export 11.5.xlsx")
 stats_template = pd.read_excel(r"C:\Users\jtsve\OneDrive\Desktop\Template Files\MPProfileStatTemplate.xlsx")
 

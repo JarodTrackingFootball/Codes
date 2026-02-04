@@ -23,10 +23,10 @@ import random
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
-database = pd.read_excel(r"C:\Users\jtsve\Downloads\11_24_25 TF Full export.xlsx")
+database = pd.read_excel(r"C:\Users\jtsve\Downloads\TF HS Player Export 1-27-2026.xlsx")
 
 
-last_day_val = 000
+last_day_val = 100
 
 bad_links = pd.read_excel(r"C:\Users\jtsve\OneDrive\Desktop\TrackFlagList.xlsx")
 bad_urls = bad_links['URL']
@@ -45,7 +45,8 @@ proxy_ips = ['23.94.248.15:34555', '23.95.111.212:24557', '107.172.45.115:42720'
 proxy_list = []
 proxies = []
 
-cks = '_ga=GA1.1.215681024.1745846030; __stripe_mid=567ab0fe-b527-4689-8b25-a98a92971fc33f44f0; CSUser=username=2560693&emailAddress=jtn47316@gmail.com&CommonName=JT Noah&EnableDisplayName=true; _ga_ZXKS3ZXZ0V=GS1.1.1745939451.3.0.1745939451.0.0.0; __qca=P1-17d32828-f180-4418-bc85-d9df98bac37f; _ncid=38ed48ee4447c258cec7bb393403067e; _au_1d=AU1D-0100-001751996125-ZWPWPDC8-493C; __gads=ID=e8bfe3ebebd2ccce:T=1745846034:RT=1757088866:S=ALNI_MZG-TpiT7CLcF154LX4aQ5tZ-GMbQ; __gpi=UID=000010a328f33fbf:T=1745846034:RT=1757088866:S=ALNI_Maf0ZxSQ4pMIbXOeWNcyL9u9NzRWA; _cc_id=3cc0c66df4619fc133c8404938d436b0; _pbjs_userid_consent_data=6683316680106290; _ga_CV6QCFM8SJ=GS2.1.s1763408244$o17$g1$t1763408661$j60$l0$h0; _ga_BY35Y57BMZ=GS2.1.s1763408659$o3$g0$t1763408661$j60$l0$h0; _ga_FVWZ0RM4DH=GS2.1.s1763408661$o3$g0$t1763408661$j60$l0$h0; ANETSettings=guid=d8574322-d8f8-4d0c-91de-6a2b1cfa6814&Sport=TF&User=2560693&Team=3050; FCCDCF=%5Bnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5B32%2C%22%5B%5C%2294aed4c6-f736-4ca8-8421-f26601a3d8b6%5C%22%2C%5B1763408245%2C772000000%5D%5D%22%5D%5D%5D; FCNEC=%5B%5B%22AKsRol-uukwZK3ooD2erJSRrIZcwt97_ClUmzJ01VdF-0ikPp0cTtniQEmezuSA7pQWXa-dFUnO0dsjUgUNIEmtI5-OSTY4FmrQ07DjsQVidCnVoyFWb2YoGUkaMoCUfQlcfuHu7eZ6B4Jxuj2VOCUryhE18J6_N8w%3D%3D%22%5D%5D; .AspNet.SharedCookie=CfDJ8C_mqgwItk1Koa8lFJ9MHwrLksFr9H96C2wZrU4EcEFf687ZNgJr2SA9yVDh6CkjmTgzG9BqoRB4N8yXkrLswK9FEwNbDAwNStQvuMzWDU89BPuxKTNirQzvwlOpi-qgWbWfnK6in77TjIYIzBAJeldmqc7tSTNZyobtB4vMniKrCAX1QPouavrSDXRu2u7UZP3lVsNKPDSK4PMkL9Q4KPVeT1ydyot8YeyTsBRAxV5x6Gj04yrW6OSXdrSlKAF816USvEMEpA9F578Wa4gz7nWll5QWUXbbaaExrFPK8K0lxcxDxiyfniz3P0fTqH25oMzR-LU1Ae3fZCbWTvZlC34wi0A8F5blsKMjV6kbF_5Z1zlp5S8-B79-b3k5OJZU17e9GHYueu4DPr-YpQBa0Ry7xxeQvwO6_3LMflkO6otDJe7bZcFru_uma5pCdOSYgco-y66aKarcZYkqpsQmzhFtDf5_t8k08ufOS74tohZPQxbCPIzcZ5rV0T4ENxvR39ZhaGIAcWVyPdGVJt6ZtkzS39lR-mnDKxsJr3Cxt-TKGeEF4_mM-pB4MSFcdLxgIJzw274UTiVjTBrrWozX5vmLaf-mygUo3_e3I6jv5oT-MGv2zZLEomgZ_fmtTxoSKj30j2gOR4_sgnp2nTe4KXvwHcRkdD7xna-NIMRNuXQ1ZBw5z0-KYNB6wsM7j_P9XAsTUdhEuRnixtl5YWqXWF8; __stripe_sid=fd34dbbd-b746-4495-b0f5-3e7220b39b351d985b'
+cks = '_ga=GA1.1.215681024.1745846030; __stripe_mid=567ab0fe-b527-4689-8b25-a98a92971fc33f44f0; CSUser=username=2560693&emailAddress=jtn47316@gmail.com&CommonName=JT Noah&EnableDisplayName=true; __qca=P1-17d32828-f180-4418-bc85-d9df98bac37f; _ncid=38ed48ee4447c258cec7bb393403067e; _au_1d=AU1D-0100-001751996125-ZWPWPDC8-493C; __gads=ID=e8bfe3ebebd2ccce:T=1745846034:RT=1757088866:S=ALNI_MZG-TpiT7CLcF154LX4aQ5tZ-GMbQ; __gpi=UID=000010a328f33fbf:T=1745846034:RT=1757088866:S=ALNI_Maf0ZxSQ4pMIbXOeWNcyL9u9NzRWA; _cc_id=3cc0c66df4619fc133c8404938d436b0; _ga_BY35Y57BMZ=GS2.1.s1767103790$o4$g0$t1767103791$j60$l0$h0; _ga_FVWZ0RM4DH=GS2.1.s1767103791$o4$g0$t1767103791$j60$l0$h0; _ga_ZXKS3ZXZ0V=GS2.1.s1768172880$o6$g0$t1768172880$j60$l0$h0; _ga_CV6QCFM8SJ=GS2.1.s1768172864$o21$g1$t1768172896$j28$l0$h0; FCCDCF=%5Bnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5B32%2C%22%5B%5C%2294aed4c6-f736-4ca8-8421-f26601a3d8b6%5C%22%2C%5B1763408245%2C772000000%5D%5D%22%5D%5D%5D; FCNEC=%5B%5B%22AKsRol8at52WDJw1fv3Vjo40M403IBSE_Q9iT1Tah12eCAwFlSQYYo69OO82234H0eIYtddWSun7wP7-FvXsNHzPcNynC_ufNGzMnJA46CpIWKdxkeBGrItC-OXwfVYwb7d_2hf3dAEPFpJTnn61d19HGsXVnmA8kQ%3D%3D%22%5D%5D; .AspNet.SharedCookie=CfDJ8C-EPVdx7spCk3oxADTNfA-11SObWbAIu8jJwWQpZDwLGTMOUNApOnqIlGMSvThJqzhog8R4ydunnggFoIRuVCBVRP0QoAYFB7Tbh_J_0f4B7YKh8K4_NglpkiAZqgWRLnfNLrfzpS4HDgEPPq-TdzG0EcwiQzWhv3q-DQOg1IncNOISKmpMd-HdESvMBYlBdQ9w8feRZU2FXfgva5rkryYNRt1pbz-8Zh_jOkvPfuK1nsRVKehHn_xqh3nU9gi52uXCyUTzni-2GkAVR-NWB0Cg5tlO8jS6nsZZwj4vTIstHjCZls11Udo5NfnnJMs_eB-RMS68o6UkVYXaURJSK1G-Tq0SBkhygOodtnUdTOKQFwgiXLFjF72ndzNuQQSrWcrMzToRKpVlyQNdaHC4LspR8CWWS4mJfxpEEGONZqgVfBxRlkyE1NL7_eYiNYOZTeHZt_sQ462r-WIbTSgc4SwxVwi6aZRBlm7kgagHoGsRpfsOE3J9K5vO6tgOyQw7fHh-8q-XLEE-7CxswlW6SunFMwVKovjNP3NkicTbhqukOhBEscu3Z5dsyjMiM9yeDFN85svYwZQ-YFEZQIAJ50mdKQIvreyuz7W2bF_hpWV5VkSePlQHoeRbSvQotGwpo5bbtWE1NL3XZi8-38IAUey4nov9rxUjw0E6dI-tNCV4n4uDaMTFZEAZrEZ87Z08YM5_8HdW-98owQa1OkU5WCc; ANETSettings=guid=d8574322-d8f8-4d0c-91de-6a2b1cfa6814&Sport=TF&User=2560693&Team=3050; __stripe_sid=e84d4269-39c1-485b-b307-f2c0fc231833f22fd7'
+
 
 for proxy_temp in proxy_ips:
     temp = "http://{0}:{1}@{2}".format(proxy_username, proxy_password, proxy_temp)    
@@ -195,8 +196,8 @@ df.drop(index_names, inplace=True)
 df = df.reset_index(drop=True)
 
 
-df['ID'] = None
-df['Unique ID'] = None
+#df['ID'] = None
+#df['Unique ID'] = None
 
 index_names = database[database['Athletic URL'] != database['Athletic URL']].index
 database.drop(index_names, inplace = True)
@@ -206,6 +207,11 @@ df = df.reset_index(drop=True)
 #df['Slug'] = df['URL'].map(database.set_index('Athletic URL')['Slug'])
 
 df = pd.merge(df, database[['Athletic URL', 'Slug']], on='Athletic URL',how='left')
+
+today =date.today()
+today = today.strftime("%b-%d-%Y")
+    
+df.to_csv(r'C:\Users\jtsve\OneDrive\Desktop\Excel Exports\'' + str(today) + 'AIndoorRankingsRAW.csv', index=False)
 
 template = pd.read_csv(r"C:\Users\jtsve\OneDrive\Desktop\Template Files\ImportTemplate.csv")
 
@@ -243,8 +249,7 @@ for event in events_tf:
     temp_df['First Name'] = None
     temp_df['Athletic URL'] = None
     temp_df.to_excel(r"C:\Users\jtsve\OneDrive\Documents\a"+event+"Updates"+".xlsx",index=False)
-today =date.today()
-today = today.strftime("%b-%d-%Y")
+
 
 #driver.quit()
 

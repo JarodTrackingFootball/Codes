@@ -20,12 +20,12 @@ import time
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-player_data = pd.read_excel(r"C:\Users\jtsve\Downloads\Players_TrackingFootball_102125-080844am.xlsx")
+player_data = pd.read_excel(r"C:\Users\jtsve\Downloads\TF HS Player Export 1-27-2026.xlsx")
 
 player_data['Created Date'] = None
 
 for i in range(0,len(player_data)):
-    time.sleep(2)
+    #time.sleep(2)
     slug = player_data.at[i, 'Slug']
     url_request = 'https://tfb2-api.trackingfootball.com/api/v1/api/player-details?type=slug&value='+slug
     response = requests.get(url_request, headers={'api-key':'6e0520d5-f63f-47aa-b89e-46c356f48e0a'})
@@ -34,4 +34,4 @@ for i in range(0,len(player_data)):
     created = created.split("T")[0]
     player_data.at[i, 'Created Date'] = created
     
-player_data.to_csv(r"C:\Users\jtsve\Downloads\HSCreatedDateExport(10-21).csv")
+player_data.to_csv(r"C:\Users\jtsve\Downloads\HSCreatedDateExport(2-4).csv")
